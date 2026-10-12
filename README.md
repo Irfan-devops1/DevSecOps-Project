@@ -11,10 +11,6 @@
 </div>
 
 <br />
-
-
-<br />
-
 <div align="center">
   <img src="./screenshots/Netflixlive2.png.png"
        alt="Netflix Movie Details Page"
