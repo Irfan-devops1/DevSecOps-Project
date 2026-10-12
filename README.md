@@ -14,13 +14,7 @@
   <p align="center">Home Page</p>
 </div>
 
-# **Youtube Video for step by step Demonstration!**
-[![Video Tutorial](https://img.youtube.com/vi/g8X5AoqCJHc/0.jpg)](https://youtu.be/g8X5AoqCJHc)
 
-
-## Susbcribe:
-[https://www.youtube.com/@cloudchamp?
-](https://www.youtube.com/@cloudchamp?sub_confirmation=1)
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
@@ -37,7 +31,7 @@
 - Clone your application's code repository onto the EC2 instance:
     
     ```bash
-    git clone https://github.com/N4si/DevSecOps-Project.git
+    git clone https://github.com/Irfan-devops1/DevSecOps-Project.git
     ```
     
 
@@ -99,11 +93,19 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         
         To install Trivy:
         ```
-        sudo apt-get install wget apt-transport-https gnupg lsb-release
-        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
-        echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
-        sudo apt-get update
-        sudo apt-get install trivy        
+        sudo apt install -y wget gnupg apt-transport-https
+
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key \
+        | gpg --dearmor \
+        | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+
+        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" \
+        | sudo tee /etc/apt/sources.list.d/trivy.list
+
+        sudo apt update
+        sudo apt install -y trivy
+        trivy --version
+
         ```
         
         to scan image using trivy
@@ -204,7 +206,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Irfan-devops1/DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -294,7 +296,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Irfan-devops1/DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -333,20 +335,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build --build-arg TMDB_V3_API_KEY=<yourapikey> -t netflix ."
-                       sh "docker tag netflix nasi101/netflix:latest "
-                       sh "docker push nasi101/netflix:latest "
+                       sh "docker tag netflix irfanahmadbhat/netflix:latest "
+                       sh "docker push irfanahmadbhat/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image nasi101/netflix:latest > trivyimage.txt" 
+                sh "trivy image irfanahmadbhat/netflix:latest > trivyimage.txt" 
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 nasi101/netflix:latest'
+                sh 'docker run -d --name netflix -p 8081:80 irfanahmadbhat/netflix:latest'
             }
         }
     }
@@ -736,7 +738,7 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 1. **Install ArgoCD:**
 
-   You can install ArgoCD on your Kubernetes cluster by following the instructions provided in the [EKS Workshop](https://archive.eksworkshop.com/intermediate/290_argocd/install/) documentation.
+   You can install ArgoCD on your Kubernetes.
 
 2. **Set Your GitHub Repository as a Source:**
 
