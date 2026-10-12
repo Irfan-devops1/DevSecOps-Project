@@ -13,10 +13,11 @@
 <br />
 
 <div align="center">
-  <img src="./screenshots/Netflixlive2.png" alt="Logo" width="100%" height="100%">
-  <p align="center">Home Page</p>
+  <img src="./screenshots/Netflixlive2.png"
+       alt="Netflix Application Full Screenshot"
+       width="100%">
+  <p>Netflix Application Homepage</p>
 </div>
-
 
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
