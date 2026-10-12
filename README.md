@@ -4,18 +4,32 @@
 <div align="center">
   <img src="./screenshots/Project Architecture.png" alt="Logo" width="100%" height="100%">
 
-  <br>
+  <br><br>
+
   <a href="http://netflix-clone-with-tmdb-using-react-mui.vercel.app/">
-    <img src="./screenshots/Netflixlive1.png" alt="Logo" width="100" height="32">
+    <img src="./screenshots/Netflixlive1.png"
+         alt="Netflix Live Demo"
+         width="100"
+         height="32">
   </a>
 </div>
 
 <br />
+
 <div align="center">
-  <img src="./screenshots/Netflixlive2.png.png"
+  <img src="./screenshots/Netflixlive2.png"
+       alt="Netflix Application Homepage"
+       width="100%">
+  <p>Homepage</p>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="./screenshots/imagebuildscreenshot.png"
        alt="Netflix Movie Details Page"
        width="100%">
-  <p><strong>Netflix Movie Details Page</strong></p>
+  <p>Movie Details Page</p>
 </div>
 
 
