@@ -15,6 +15,8 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 
+RUN apk upgrade --no-cache
+
 WORKDIR /usr/share/nginx/html
 
 RUN rm -rf ./*

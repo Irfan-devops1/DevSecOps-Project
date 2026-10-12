@@ -1,0 +1,52 @@
+
+Report Summary
+
+┌───────────────────────────────────────────────┬────────┬─────────────────┬─────────┐
+│                    Target                     │  Type  │ Vulnerabilities │ Secrets │
+├───────────────────────────────────────────────┼────────┼─────────────────┼─────────┤
+│ irfanahmadbhat/netflix:latest (alpine 3.24.2) │ alpine │        6        │    -    │
+└───────────────────────────────────────────────┴────────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+For OSS Maintainers: VEX Notice
+--------------------------------
+If you're an OSS maintainer and Trivy has detected vulnerabilities in your project that you believe are not actually exploitable, consider issuing a VEX (Vulnerability Exploitability eXchange) statement.
+VEX allows you to communicate the actual status of vulnerabilities in your project, improving security transparency and reducing false positives for your users.
+Learn more and start using VEX: https://trivy.dev/docs/v0.75/guide/supply-chain/vex/repo#publishing-vex-documents
+
+To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
+
+
+irfanahmadbhat/netflix:latest (alpine 3.24.2)
+=============================================
+Total: 6 (UNKNOWN: 0, LOW: 0, MEDIUM: 3, HIGH: 3, CRITICAL: 0)
+
+┌──────────────┬─────────────────┬──────────┬────────┬───────────────────┬───────────────┬────────────────────────────────────────────────────────────┐
+│   Library    │  Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                           Title                            │
+├──────────────┼─────────────────┼──────────┼────────┼───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ libexpat     │ CVE-2026-93990  │ HIGH     │ fixed  │ 2.8.4-r0          │ 2.8.5-r0      │ expat: Expat: XML Injection via Malformed UTF-16 Input     │
+│              │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-93990                 │
+├──────────────┼─────────────────┼──────────┤        ├───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ libpng       │ CVE-2026-46675  │ MEDIUM   │        │ 1.6.58-r1         │ 1.6.59-r0     │ [Use-after-free of zlib input in `png_read_end` after      │
+│              │                 │          │        │                   │               │ incomplete zTXt, iTXt or iCCP...                           │
+│              │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-46675                 │
+├──────────────┼─────────────────┤          │        ├───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ nghttp2-libs │ CVE-2026-58055  │          │        │ 1.69.0-r0         │ 1.70.0-r0     │ nghttp2: nghttp2: HTTP Request/Response Smuggling and      │
+│              │                 │          │        │                   │               │ Response-Queue Poisoning via ambiguous HTTP/1.1 Upgrade... │
+│              │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-58055                 │
+├──────────────┼─────────────────┼──────────┤        ├───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ pcre2        │ CVE-2026-103111 │ HIGH     │        │ 10.48-r0          │ 10.49-r0      │ pcre2: pcre2: Out-of-bounds write via crafted regular      │
+│              │                 │          │        │                   │               │ expression                                                 │
+│              │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-103111                │
+├──────────────┼─────────────────┤          │        ├───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ tiff         │ CVE-2026-4775   │          │        │ 4.7.1-r0          │ 4.7.2-r0      │ libtiff: libtiff: Arbitrary code execution or denial of    │
+│              │                 │          │        │                   │               │ service via signed integer...                              │
+│              │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-4775                  │
+├──────────────┼─────────────────┼──────────┤        ├───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ zlib         │ CVE-2026-85091  │ MEDIUM   │        │ 1.3.2-r0          │ 1.3.2-r1      │ zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer  │
+│              │                 │          │        │                   │               │ overflow vul ......                                        │
+│              │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-85091                 │
+└──────────────┴─────────────────┴──────────┴────────┴───────────────────┴───────────────┴────────────────────────────────────────────────────────────┘
