@@ -11,17 +11,12 @@
          alt="Netflix Live Demo"
          width="100"
          height="32">
-  </a>
-</div>
-
 <br />
 
 <div align="center">
   <img src="./screenshots/Netflixlive2.png"
        alt="Netflix Application Homepage"
        width="100%">
-  <p>Homepage</p>
-</div>
 
 <br />
 
@@ -29,8 +24,7 @@
   <img src="./screenshots/imagebuildscreenshot.png"
        alt="Netflix Movie Details Page"
        width="100%">
-  <p>Movie Details Page</p>
-</div>
+  
 
 
 
