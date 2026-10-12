@@ -7,10 +7,9 @@
   <br><br>
 
   <a href="http://netflix-clone-with-tmdb-using-react-mui.vercel.app/">
-    <img src="./screenshots/Netflixlive1.png"
-         alt="Netflix Live Demo"
-         width="100"
-         height="32">
+  <img src=".screenshots/Netflixlive1.png"
+       alt="Netflix Live Demo"
+       width="250">
 <br />
 
 <div align="center">
