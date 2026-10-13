@@ -199,10 +199,11 @@ trivy image netflix:latest
     echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
     https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
     /etc/apt/sources.list.d/jenkins.list > /dev/null
-    sudo apt-get update
-    sudo apt-get install jenkins
-    sudo systemctl start jenkins
+    sudo apt update
+    sudo apt install jenkins
     sudo systemctl enable jenkins
+    sudo systemctl start jenkins
+    sudo systemctl status jenkins
     ```
     
     - Access Jenkins in a web browser using the public IP of your EC2 instance.
