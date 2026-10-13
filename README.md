@@ -18,7 +18,7 @@ Orchestration: Kubernetes
 
 Monitoring: Prometheus and Grafana
 
-# Project Repository: Netflix-Clone-DevSecOps-Project
+**Project Repository:** [Netflix-Clone-DevSecOps-Project](https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project)
 
 
 
