@@ -46,6 +46,39 @@ Monitoring: Prometheus and Grafana
   
 
 
+<div align="center">
+  <img src="./screenshots/Buildsuccess1.png"
+       alt="Jenkins Build"
+       width="100%">
+  <p><em>Jenkins Pipeline Build Execution</em></p>
+</div>
+
+
+<div align="center">
+  <img src="./screenshots/Buildsucess2.png"
+       alt="Jenkins Build 2"
+       width="100%">
+  <p><em>Jenkis Pipeline SonarQube and Dependency Check</em></p>
+</div>
+
+
+<div align="center">
+  <img src="./screenshots/Buildsucess3.png"
+       alt="Jenkins Build 2"
+       width="100%">
+  <p><em>Jenkis Pipeline build stages </em></p>
+</div>
+
+
+
+## Docker Image Successfully Pushed to Docker Hub
+
+<div align="center">
+  <img src="./screenshots/Netfliximage.png"
+       alt="DockerHub"
+       width="100%">
+  <p><em>Docker image pushed to DockerHub </em></p>
+</div>
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
@@ -421,42 +454,6 @@ sudo systemctl restart jenkins
 
 
 ```
-
-
-<div align="center">
-  <img src="./screenshots/Buildsuccess1.png"
-       alt="Jenkins Build"
-       width="100%">
-  <p><em>Jenkins Pipeline Build Execution</em></p>
-</div>
-
-
-<div align="center">
-  <img src="./screenshots/Buildsucess2.png"
-       alt="Jenkins Build 2"
-       width="100%">
-  <p><em>Jenkis Pipeline SonarQube and Dependency Check</em></p>
-</div>
-
-
-<div align="center">
-  <img src="./screenshots/Buildsucess3.png"
-       alt="Jenkins Build 2"
-       width="100%">
-  <p><em>Jenkis Pipeline build stages </em></p>
-</div>
-
-
-
-## Docker Image Successfully Pushed to Docker Hub
-
-<div align="center">
-  <img src="./screenshots/Netfliximage.png"
-       alt="DockerHub"
-       width="100%">
-  <p><em>Docker image pushed to DockerHub </em></p>
-</div>
-
 
 
 **Phase 4: Monitoring**
