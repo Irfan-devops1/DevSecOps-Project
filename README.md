@@ -1,3 +1,27 @@
+## Netflix Clone — DevSecOps Project
+
+A hands-on DevSecOps project demonstrating the automation of application build, security scanning, containerization, and deployment using modern DevOps tools.
+
+# Technology Stack
+
+Cloud: AWS EC2
+
+CI/CD: Jenkins
+
+Version Control: Git and GitHub
+
+Containerization: Docker and Docker Hub
+
+Security: SonarQube, OWASP Dependency-Check, and Trivy
+
+Orchestration: Kubernetes
+
+Monitoring: Prometheus and Grafana
+
+# Project Repository: Netflix-Clone-DevSecOps-Project
+
+
+
 # Project Architecture
 
 
