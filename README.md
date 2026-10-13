@@ -62,7 +62,7 @@ Monitoring: Prometheus and Grafana
 - Clone your application's code repository onto the EC2 instance:
     
     ```bash
-    git clone https://github.com/Irfan-devops1/DevSecOps-Project.git
+    git clone https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project.git
     ```
     
 
@@ -263,7 +263,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/Irfan-devops1/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -353,7 +353,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Irfan-devops1/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
