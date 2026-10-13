@@ -1,3 +1,6 @@
+# Project Overview
+A Netflix Clone project demonstrating end-to-end DevSecOps practices using AWS EC2, Jenkins CI/CD, Docker, SonarQube, OWASP Dependency-Check, and Trivy for automated builds, security scanning, and container deployment, with Kubernetes, Prometheus, and Grafana for monitoring.
+
 # Project Architecture
 
 <p align="center">
