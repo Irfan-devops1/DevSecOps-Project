@@ -86,7 +86,6 @@ A Netflix Clone project demonstrating end-to-end DevSecOps practices using AWS E
     sudo apt-get install docker.io -y
     sudo usermod -aG docker $USER  # Replace with your system's username, e.g., 'ubuntu'
     newgrp docker
-    sudo chmod 777 /var/run/docker.sock
     ```
     
 - Build and run your application using Docker containers:
