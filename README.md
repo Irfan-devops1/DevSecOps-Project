@@ -859,6 +859,8 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 
 
-👨‍💻 Project by: Irfan Ahmad
-☁️ Cloud Platform: AWS EC2
-🔗 Repository: Netflix-Clone-DevSecOps-Project
+**👨‍💻 Project by:** Irfan Ahmad
+
+**☁️ Cloud Platform:** AWS EC2
+
+**🔗 Project Repository:** [Netflix-Clone-DevSecOps-Project](https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project)
