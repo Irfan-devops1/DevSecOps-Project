@@ -126,8 +126,8 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 1. **Install SonarQube and Trivy:**
     - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
         
- sonarqube
-
+ 
+        sonarqube
         ```
         docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
         ```
@@ -138,6 +138,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         `http://<your-server-ip>:9000`. (by default username & password is admin)
         
   To install Trivy:
+       
         ```
         sudo apt install -y wget gnupg apt-transport-https
 
@@ -151,11 +152,10 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         sudo apt update
         sudo apt install -y trivy
         trivy --version
-
         ```
-        
         to scan image using trivy
-        ```
+         ```
+       
         trivy image <imageid>
         ```
         
