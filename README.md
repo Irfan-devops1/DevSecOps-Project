@@ -859,6 +859,7 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 
 
+
 **👨‍💻 Project by:** Irfan Ahmad
 
 **☁️ Cloud Platform:** AWS EC2
