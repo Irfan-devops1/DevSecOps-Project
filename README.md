@@ -398,29 +398,45 @@ sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
 
 <div align="center">
-  <img src="./screenshots/Buildsuccess1.png" alt="Jenkins Pipeline Build" width="100%">
-  <p><em>Jenkins pipeline build execution</em></p>
+  <img src="./screenshots/Buildsuccess1.png"
+       alt="Jenkins Build"
+       width="100%">
+  <p><em>Jenkins Pipeline Build Execution</em></p>
 </div>
 
 
 <div align="center">
-  <img src="./screenshots/Buildsucess2.png" alt="Jenkins Pipeline Build" width="100%">
-  <p><em>Jenkins pipeline SonarQube and Dependency Check</em></p>
+  <img src=".//screenshots/Buildsucess2.png"
+       alt="Jenkins Build 2"
+       width="100%">
+  <p><em>Jenkis Pipeline SonarQube and Dependency Check</em></p>
 </div>
 
 
 <div align="center">
-  <img src="./screenshots/Buildsucess3.png" alt="Jenkins Pipeline Build" width="100%">
-  <p><em>Jenkins pipeline build stages</em></p>
+  <img src="./screenshots/Buildsucess2.png"
+       alt="Jenkins Build 2"
+       width="100%">
+  <p><em>Jenkis build </em></p>
 </div>
+
+
+<div align="center">
+  <img src="./screenshots/Buildsucess3.png"
+       alt="Jenkins Build 2"
+       width="100%">
+  <p><em>Jenkis Pipeline build stages </em></p>
+</div>
+
+
 
 ## Docker Image Successfully Pushed to Docker Hub
 
 <div align="center">
-  <img src="./screenshots/Netfliximage.png"
-       alt="Netflix Application Docker Image on Docker Hub"
+  <img src="./screenshots/Netfliximage.png.png"
+       alt="DockerHub"
        width="100%">
-  <p><em>Netflix application Docker image and tag published to Docker Hub</em></p>
+  <p><em>Docker image pushed to DockerHub </em></p>
 </div>
 
 
