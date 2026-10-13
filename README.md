@@ -676,7 +676,12 @@ sudo apt-get install -y wget gnupg
 Add the GPG key for Grafana:
 
 ```bash
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+sudo mkdir -p /etc/apt/keyrings
+
+sudo wget -O /etc/apt/keyrings/grafana.asc \
+  https://apt.grafana.com/gpg-full.key
+
+sudo chmod 644 /etc/apt/keyrings/grafana.asc
 ```
 
 **Step 3: Add Grafana Repository:**
@@ -684,7 +689,8 @@ wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 Add the repository for Grafana stable releases:
 
 ```bash
-echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+echo "deb [signed-by=/etc/apt/keyrings/grafana.asc] https://apt.grafana.com stable main" \
+  | sudo tee /etc/apt/sources.list.d/grafana.list
 ```
 
 **Step 4: Update and Install Grafana:**
@@ -693,7 +699,7 @@ Update the package list and install Grafana:
 
 ```bash
 sudo apt-get update
-sudo apt-get -y install grafana
+sudo apt-get install -y grafana
 ```
 
 **Step 5: Enable and Start Grafana Service:**
