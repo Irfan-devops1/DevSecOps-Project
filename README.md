@@ -397,6 +397,11 @@ sudo su
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
 
+
+
+```
+
+
 <div align="center">
   <img src="./screenshots/Buildsuccess1.png"
        alt="Jenkins Build"
@@ -432,8 +437,6 @@ sudo systemctl restart jenkins
 </div>
 
 
-
-```
 
 **Phase 4: Monitoring**
 
