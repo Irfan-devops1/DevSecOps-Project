@@ -16,7 +16,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Irfan-devops1/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
