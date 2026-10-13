@@ -1,84 +1,58 @@
-## Netflix Clone — DevSecOps Project
-
-A hands-on DevSecOps project demonstrating the automation of application build, security scanning, containerization, and deployment using modern DevOps tools.
-
-# Technology Stack
-
-Cloud: AWS EC2
-
-CI/CD: Jenkins
-
-Version Control: Git and GitHub
-
-Containerization: Docker and Docker Hub
-
-Security: SonarQube, OWASP Dependency-Check, and Trivy
-
-Orchestration: Kubernetes
-
-Monitoring: Prometheus and Grafana
-
-
 # Project Architecture
 
+<p align="center">
+  <img src="./screenshots/Project Architecture.png" alt="Netflix Clone DevSecOps Project Architecture" width="100%">
+</p>
 
-<div align="center">
-  <img src="./screenshots/Project Architecture.png" alt="Logo" width="100%" height="100%">
+## Live Application
 
-  <br><br>
-
+<p align="center">
   <a href="http://netflix-clone-with-tmdb-using-react-mui.vercel.app/">
-  <img src="./screenshots/Netflixlive1.png" alt="Logo" width="100%" height="100%">
+    <img src="./screenshots/Netflixlive1.png" alt="Netflix Clone Live Application" width="100%">
+  </a>
+</p>
 
-<br />
+<p align="center">
+  <img src="./screenshots/Netflixlive2.png" alt="Netflix Application Homepage" width="100%">
+</p>
 
-<div align="center">
-  <img src="./screenshots/Netflixlive2.png"
-       alt="Netflix Application Homepage"
-       width="100%">
+## Docker Image Build
 
-<br />
+<p align="center">
+  <img src="./screenshots/imagebuildscreenshot.png" alt="Docker Image Build" width="100%">
+</p>
 
-<div align="center">
-  <img src="./screenshots/imagebuildscreenshot.png"
-       alt="Netflix Movie Details Page"
-       width="100%">
-  
+## Jenkins CI/CD Pipeline
 
+<p align="center">
+  <img src="./screenshots/Buildsuccess1.png" alt="Jenkins Build" width="100%">
+</p>
 
-<div align="center">
-  <img src="./screenshots/Buildsuccess1.png"
-       alt="Jenkins Build"
-       width="100%">
-  <p><em>Jenkins Pipeline Build Execution</em></p>
-</div>
+<p align="center">
+</p>
 
+<p align="center">
+  <img src="./screenshots/Buildsucess2.png" alt="Jenkins SonarQube and Dependency Check" width="100%">
+</p>
 
-<div align="center">
-  <img src="./screenshots/Buildsucess2.png"
-       alt="Jenkins Build 2"
-       width="100%">
-  <p><em>Jenkis Pipeline SonarQube and Dependency Check</em></p>
-</div>
+<p align="center">
+</p>
 
+<p align="center">
+  <img src="./screenshots/Buildsucess3.png" alt="Jenkins Pipeline Build Stages" width="100%">
+</p>
 
-<div align="center">
-  <img src="./screenshots/Buildsucess3.png"
-       alt="Jenkins Build 2"
-       width="100%">
-  <p><em>Jenkis Pipeline build stages </em></p>
-</div>
-
-
+<p align="center">
+</p>
 
 ## Docker Image Successfully Pushed to Docker Hub
 
-<div align="center">
-  <img src="./screenshots/Netfliximage.png"
-       alt="DockerHub"
-       width="100%">
-  <p><em>Docker image pushed to DockerHub </em></p>
-</div>
+<p align="center">
+  <img src="./screenshots/Netfliximage.png" alt="Netflix Docker Image on Docker Hub" width="100%">
+</p>
+
+<p align="center">
+</p>
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
@@ -137,11 +111,7 @@ It will show an error cause you need API key
 
 <div align="center">
   <img src="./screenshots/TMDVAPIKEY.png" alt="TMDB API Configuration" width="100%">
-  <p><em>TMDB API configuration for the Netflix Clone project</em></p>
 </div>
-
-
-
 
 Now recreate the Docker image with your api key:
 ```
@@ -190,10 +160,8 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
   <img src="./screenshots/trivyscanningimage.png"
        alt="Trivy Vulnerability Scan Results"
        width="100%">
-  <p><em>Trivy security scanning results for the DevSecOps project</em></p>
 </div>
-
-        
+     
 2. **Integrate SonarQube and Configure:**
     - Integrate SonarQube with your CI/CD pipeline.
     - Configure SonarQube to analyze code for quality and security issues.
@@ -203,7 +171,6 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
   <img src="./screenshots/sonarqubecodescanning.png"
        alt="SonarQube Code Quality Dashboard"
        width="100%">
-  <p><em>SonarQube code quality analysis and Quality Gate results</em></p>
 </div>
 
 
