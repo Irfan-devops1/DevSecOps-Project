@@ -128,7 +128,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         
  To access: 
         
-        publicIP:900c0 (by default username & password is admin)
+        `http://<your-server-ip>:9000`. (by default username & password is admin)
         
   To install Trivy:
         ```
