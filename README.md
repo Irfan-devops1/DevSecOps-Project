@@ -107,7 +107,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         
  To access: 
         
-        publicIP:9000 (by default username & password is admin)
+        publicIP:900c0 (by default username & password is admin)
         
   To install Trivy:
         ```
@@ -406,18 +406,10 @@ sudo systemctl restart jenkins
 
 
 <div align="center">
-  <img src=".//screenshots/Buildsucess2.png"
-       alt="Jenkins Build 2"
-       width="100%">
-  <p><em>Jenkis Pipeline SonarQube and Dependency Check</em></p>
-</div>
-
-
-<div align="center">
   <img src="./screenshots/Buildsucess2.png"
        alt="Jenkins Build 2"
        width="100%">
-  <p><em>Jenkis build </em></p>
+  <p><em>Jenkis Pipeline SonarQube and Dependency Check</em></p>
 </div>
 
 
@@ -433,7 +425,7 @@ sudo systemctl restart jenkins
 ## Docker Image Successfully Pushed to Docker Hub
 
 <div align="center">
-  <img src="./screenshots/Netfliximage.png.png"
+  <img src="./screenshots/Netfliximage.png"
        alt="DockerHub"
        width="100%">
   <p><em>Docker image pushed to DockerHub </em></p>
