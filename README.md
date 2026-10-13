@@ -138,26 +138,27 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         `http://<your-server-ip>:9000`. (by default username & password is admin)
         
   To install Trivy:
-       
-        ```
-        sudo apt install -y wget gnupg apt-transport-https
 
-        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key \
-        | gpg --dearmor \
-        | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+```bash
+sudo apt install -y wget gnupg apt-transport-https
 
-        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" \
-        | sudo tee /etc/apt/sources.list.d/trivy.list
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key \
+  | gpg --dearmor \
+  | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
 
-        sudo apt update
-        sudo apt install -y trivy
-        trivy --version
-        ```
-        to scan image using trivy
-         ```
-       
-        trivy image <imageid>
-        ```
+echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" \
+  | sudo tee /etc/apt/sources.list.d/trivy.list
+
+sudo apt update
+sudo apt install -y trivy
+trivy --version
+```
+
+To scan a Docker image using Trivy:
+
+```bash
+trivy image netflix:latest
+```
         
 
 <div align="center">
