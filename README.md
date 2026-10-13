@@ -858,10 +858,12 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 <div align="left">
 
-** 👨‍💻 Project by: Irfan Ahmad (DevOps Engineer)**
 
-** ☁️ Cloud Platform: AWS EC2**
+<p><strong>👨‍💻 Project by: Irfan Ahmad (DevOps Engineer)</strong></p>
 
-** 🔗 Project Repository: [Netflix-Clone-DevSecOps-Project](https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project)**
+<p><strong>☁️ Cloud Platform: AWS EC2</strong></p>
+
+<p><strong>🔗 Project Repository: <a href="https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project">Netflix-Clone-DevSecOps-Project</a></strong></p>
+
 
 </div>
