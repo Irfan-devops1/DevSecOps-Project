@@ -99,17 +99,17 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 1. **Install SonarQube and Trivy:**
     - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
         
-        sonarqube
+ sonarqube
         ```
         docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
         ```
         
         
-        To access: 
+ To access: 
         
         publicIP:9000 (by default username & password is admin)
         
-        To install Trivy:
+  To install Trivy:
         ```
         sudo apt install -y wget gnupg apt-transport-https
 
@@ -131,10 +131,28 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         trivy image <imageid>
         ```
         
+
+<div align="center">
+  <img src="./screenshots/trivyscanningimage.png"
+       alt="Trivy Vulnerability Scan Results"
+       width="100%">
+  <p><em>Trivy security scanning results for the DevSecOps project</em></p>
+</div>
+
         
 2. **Integrate SonarQube and Configure:**
     - Integrate SonarQube with your CI/CD pipeline.
     - Configure SonarQube to analyze code for quality and security issues.
+
+
+<div align="center">
+  <img src="./screenshots/sonarqubecodescanning.png"
+       alt="SonarQube Code Quality Dashboard"
+       width="100%">
+  <p><em>SonarQube code quality analysis and Quality Gate results</em></p>
+</div>
+
+
 
 **Phase 3: CI/CD Setup**
 
@@ -378,6 +396,33 @@ If you get docker login failed errorr
 sudo su
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
+
+<div align="center">
+  <img src="./screenshots/Buildsuccess1.png" alt="Jenkins Pipeline Build" width="100%">
+  <p><em>Jenkins pipeline build execution</em></p>
+</div>
+
+
+<div align="center">
+  <img src="./screenshots/Buildsucess2.png" alt="Jenkins Pipeline Build" width="100%">
+  <p><em>Jenkins pipeline SonarQube and Dependency Check</em></p>
+</div>
+
+
+<div align="center">
+  <img src="./screenshots/Buildsucess3.png" alt="Jenkins Pipeline Build" width="100%">
+  <p><em>Jenkins pipeline build stages</em></p>
+</div>
+
+## Docker Image Successfully Pushed to Docker Hub
+
+<div align="center">
+  <img src="./screenshots/Netfliximage.png"
+       alt="Netflix Application Docker Image on Docker Hub"
+       width="100%">
+  <p><em>Netflix application Docker image and tag published to Docker Hub</em></p>
+</div>
+
 
 
 ```
