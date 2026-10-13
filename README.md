@@ -18,9 +18,6 @@ Orchestration: Kubernetes
 
 Monitoring: Prometheus and Grafana
 
-**Project Repository:** [Netflix-Clone-DevSecOps-Project](https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project)
-
-
 
 # Project Architecture
 
@@ -859,9 +856,12 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 
 
+<div align="left">
 
 **👨‍💻 Project by:** Irfan Ahmad
 
 **☁️ Cloud Platform:** AWS EC2
 
 **🔗 Project Repository:** [Netflix-Clone-DevSecOps-Project](https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project)
+
+</div>
