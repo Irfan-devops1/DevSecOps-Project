@@ -668,7 +668,7 @@ First, ensure that all necessary dependencies are installed:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y apt-transport-https software-properties-common
+sudo apt-get install -y wget gnupg
 ```
 
 **Step 2: Add the GPG Key:**
