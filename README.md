@@ -372,16 +372,16 @@ pipeline{
 }
 
 
-If you get docker login failed errorr
-
-sudo su
-sudo usermod -aG docker jenkins
-sudo systemctl restart jenkins
-
-
-
 ```
 
+
+**If you get docker login failed error**
+
+sudo su
+
+sudo usermod -aG docker jenkins
+
+sudo systemctl restart jenkins
 
 **Phase 4: Monitoring**
 
@@ -418,7 +418,7 @@ sudo systemctl restart jenkins
    Create a systemd unit configuration file for Prometheus:
 
    ```bash
-   sudo nano /etc/systemd/system/prometheus.service
+   sudo vim /etc/systemd/system/prometheus.service
    ```
 
    Add the following content to the `prometheus.service` file:
@@ -497,7 +497,7 @@ sudo systemctl restart jenkins
    Create a systemd unit configuration file for Node Exporter:
 
    ```bash
-   sudo nano /etc/systemd/system/node_exporter.service
+   sudo vim /etc/systemd/system/node_exporter.service
    ```
 
    Add the following content to the `node_exporter.service` file:
