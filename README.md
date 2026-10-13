@@ -183,17 +183,16 @@ trivy image netflix:latest
 
 1. **Install Jenkins for Automation:**
     - Install Jenkins on the EC2 instance to automate deployment:
-    Install Java
+
+      **Java Installation**
     
     ```bash
     sudo apt update
     sudo apt install fontconfig openjdk-21-jre
     java -version
-    openjdk 21.0.8 2025-07-15
-    OpenJDK Runtime Environment (build 21.0.8+9-Debian-1)
-    OpenJDK 64-Bit Server VM (build 21.0.8+9-Debian-1, mixed mode, sharing))
-    
-    #jenkins
+    ```
+    **Jenkins Installation**
+   ```
     sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
     https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
     echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
@@ -210,7 +209,7 @@ trivy image netflix:latest
         
         Public-IP:8080
         
-2. **Install Necessary Plugins in Jenkins:**
+3. **Install Necessary Plugins in Jenkins:**
 
 Goto Manage Jenkins →Plugins → Available Plugins →
 
