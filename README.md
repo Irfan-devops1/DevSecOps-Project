@@ -585,7 +585,7 @@ sudo systemctl restart jenkins
 
 ## Grafana
 
-**Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
+**Install Grafana on Ubuntu Server and Set it up to Work with Prometheus**
 
 **Step 1: Install Dependencies:**
 
@@ -742,9 +742,9 @@ To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node 
     helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace prometheus-node-exporter
     ```
 
-Add a Job to Scrape Metrics on nodeip:9001/metrics in prometheus.yml:
+Add a Job to Scrape Metrics on nodeip:9100/metrics in prometheus.yml:
 
-Update your Prometheus configuration (prometheus.yml) to add a new job for scraping metrics from nodeip:9001/metrics. You can do this by adding the following configuration to your prometheus.yml file:
+Update your Prometheus configuration (prometheus.yml) to add a new job for scraping metrics from nodeip:9100/metrics. You can do this by adding the following configuration to your prometheus.yml file:
 
 
 ```
@@ -754,7 +754,7 @@ Update your Prometheus configuration (prometheus.yml) to add a new job for scrap
       - targets: ['node1Ip:9100']
 ```
 
-Replace 'your-job-name' with a descriptive name for your job. The static_configs section specifies the targets to scrape metrics from, and in this case, it's set to nodeip:9001.
+Replace 'your-job-name' with a descriptive name for your job. The static_configs section specifies the targets to scrape metrics from, and in this case, it's set to nodeip:9100.
 
 Don't forget to reload or restart Prometheus to apply these changes to your configuration.
 
