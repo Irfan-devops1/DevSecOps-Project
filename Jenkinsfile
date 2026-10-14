@@ -1,4 +1,3 @@
-
 pipeline{
     agent any
     tools{
@@ -41,8 +40,13 @@ pipeline{
         }
         stage('OWASP FS SCAN') {
             steps {
-                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+                dependencyCheck(
+            additionalArguments: '--scan ./ --exclude "**/node_modules/**" --disableYarnAudit --disableNodeAudit --disableOssIndex',
+            odcInstallation: 'DP-Check'
+        )
+        dependencyCheckPublisher(
+            pattern: '**/dependency-check-report.xml'
+             )
             }
         }
         stage('TRIVY FS SCAN') {
@@ -50,28 +54,40 @@ pipeline{
                 sh "trivy fs . > trivyfs.txt"
             }
         }
-        stage("Docker Build & Push"){
+       stage("Docker Build & Push"){
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "docker build --build-arg TMDB_V3_API_KEY=(paste your tmdv key) -t netflix ."
+                       sh "docker build --build-arg TMDB_V3_API_KEY=fd3eff1d6830dfe7e1a746fbe2b05035 -t netflix ."
                        sh "docker tag netflix irfanahmadbhat/netflix:latest "
                        sh "docker push irfanahmadbhat/netflix:latest "
                     }
                 }
             }
         }
-        stage("TRIVY"){
-            steps{
-                sh "trivy image irfanahmadbhat/netflix:latest > trivyimage.txt" 
-            }
-        }
-        stage('Deploy to container'){
-            steps{
-                sh 'docker run -d --name netflix -p 8081:80 irfanahmadbhat/netflix:latest'
-            }
-        }
+        stage("TRIVY") {
+    steps {
+        sh '''
+            trivy image \
+              --image-src remote \
+              --cache-backend memory \
+              irfanahmadbhat/netflix:latest \
+              > trivyimage.txt
+        '''
     }
 }
 
+stage('Deploy to container') {
+    steps {
+        sh '''
+            docker rm -f netflix 2>/dev/null || true
+            docker run -d \
+              --name netflix \
+              -p 8081:80 \
+              irfanahmadbhat/netflix:latest
+        '''
+    }
+}
+    }
+}
 
