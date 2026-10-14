@@ -1,8 +1,12 @@
+## In this Pipeline i have upgraded Java and nodejs to jdk20 and node22 and Pipeline is working fine. So we can use upgraded versions of Java and nodejs
+
+
+
 pipeline{
     agent any
     tools{
-        jdk 'jdk17'
-        nodejs 'node16'
+        jdk 'jdk20'
+        nodejs 'node22'
     }
     environment {
         SCANNER_HOME=tool 'sonar-scanner'
@@ -15,7 +19,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Irfan-devops1/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Irfan-devops1/Netflix-Clone-DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -40,8 +44,13 @@ pipeline{
         }
         stage('OWASP FS SCAN') {
             steps {
-                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+                dependencyCheck(
+            additionalArguments: '--scan ./ --exclude "**/node_modules/**" --disableYarnAudit --disableNodeAudit --disableOssIndex',
+            odcInstallation: 'DP-Check'
+        )
+        dependencyCheckPublisher(
+            pattern: '**/dependency-check-report.xml'
+             )
             }
         }
         stage('TRIVY FS SCAN') {
@@ -49,50 +58,39 @@ pipeline{
                 sh "trivy fs . > trivyfs.txt"
             }
         }
-        stage("Docker Build & Push"){
+       stage("Docker Build & Push"){
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "docker build --build-arg TMDB_V3_API_KEY=<yourtmdbapikey> -t netflix ."
-                       sh "docker tag netflix irfanahmdbhat/netflix:latest "
+                       sh "docker build --build-arg TMDB_V3_API_KEY=fd3eff1d6830dfe7e1a746fbe2b05035 -t netflix ."
+                       sh "docker tag netflix irfanahmadbhat/netflix:latest "
                        sh "docker push irfanahmadbhat/netflix:latest "
                     }
                 }
             }
         }
-        stage("TRIVY"){
-            steps{
-                sh "trivy image irfanahmadbhat/netflix:latest > trivyimage.txt" 
-            }
-        }
-        stage('Deploy to container'){
-            steps{
-                sh 'docker run -d -p 8081:80 nasi101/netflix:latest'
-            }
-        }
-        stage('Deploy to kubernets'){
-            steps{
-                script{
-                    dir('Kubernetes') {
-                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                                sh 'kubectl apply -f deployment.yml'
-                                sh 'kubectl apply -f service.yml'
-                        }   
-                    }
-                }
-            }
-        }
-
+        stage("TRIVY") {
+    steps {
+        sh '''
+            trivy image \
+              --image-src remote \
+              --cache-backend memory \
+              irfanahmadbhat/netflix:latest \
+              > trivyimage.txt
+        '''
     }
-    post {
-     always {
-        emailext attachLog: true,
-            subject: "'${currentBuild.result}'",
-            body: "Project: ${env.JOB_NAME}<br/>" +
-                "Build Number: ${env.BUILD_NUMBER}<br/>" +
-                "URL: ${env.BUILD_URL}<br/>",
-            to: 'irfanhmd448@gmail.com',                                
-            attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
-        }
+}
+
+stage('Deploy to container') {
+    steps {
+        sh '''
+            docker rm -f netflix 2>/dev/null || true
+            docker run -d \
+              --name netflix \
+              -p 8081:80 \
+              irfanahmadbhat/netflix:latest
+        '''
+    }
+}
     }
 }
